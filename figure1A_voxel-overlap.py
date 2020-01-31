@@ -6,6 +6,7 @@ Each participant requires a mask image in standard space.
 Participant IDs should be in a TSV file entitled participants.tsv located in the
 project directory.
 
+Created by NWD, 2020-01-31
 """
 
 import os
