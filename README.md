@@ -1,13 +1,15 @@
 # MRS-voxel-plot
-This code can be used to create MRS voxel and spectra figures in the manner suggested in Truong & Duncan (2020).  
-Basic code is presented to show data from a single group but this is easily adapted to show multiple groups. 
+This code can be used to create MRS voxel and spectra figures in the manner suggested in Truong & Duncan (2020).
+
 # Dependencies
 - Numpy (https://numpy.org)
 - Matplotlib (https://matplotlib.org)
 - Nilearn (https://nilearn.github.io)
 
 # Data organisation
-The scripts assume that your data are in folders organised in a manner similar to the BIDS standard (https://bids.neuroimaging.io/). 
+The scripts assume that your data are in folders organised in a manner similar to the BIDS standard (https://bids.neuroimaging.io/).  
+
+Participant IDs and group labels (where relevant) should be in a TSV file that conforms to this standard.
 
 # Acknowledgement
 
