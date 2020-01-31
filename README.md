@@ -1,6 +1,6 @@
 # MRS-voxel-plot
-Code for creating figures presented in Truong &amp; Duncan, 2020
-
+This code can be used to create MRS voxel and spectra figures in the manner suggested in Truong & Duncan (2020).  
+Basic code is presented to show data from a single group but this is easily adapted to show multiple groups. 
 # Dependencies
 - Numpy (https://numpy.org)
 - Matplotlib (https://matplotlib.org)
