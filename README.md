@@ -5,6 +5,7 @@ This code can be used to create MRS voxel and spectra figures in the manner sugg
 - Numpy (https://numpy.org)
 - Matplotlib (https://matplotlib.org)
 - Nilearn (https://nilearn.github.io)
+- Pandas (https://pandas.pydata.org)
 
 # Data organisation
 The scripts assume that your data are in folders organised in a manner similar to the BIDS standard (https://bids.neuroimaging.io/).  
