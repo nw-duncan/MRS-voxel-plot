@@ -5,6 +5,7 @@ Participant IDs should be in a TSV file entitled participants.tsv located in the
 project directory.
 
 Created by NWD, 2020-01-31
+Modified by VHT, 2020-02-07
 
 """
 
