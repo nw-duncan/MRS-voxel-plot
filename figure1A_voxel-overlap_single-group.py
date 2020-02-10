@@ -32,8 +32,8 @@ if not os.path.isdir(fig_dir):
 # Mask filename
 mask_file = 'mask_mni.nii.gz'
 
-# Naming of the headers of the participants.tsv file
-ID_header='Participant_ID'
+# Name of the column in the participants.tsv file with IDs
+ID_header = 'participant_id'
 
 # Load in the participant IDs
 subjects = pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[ID_header]
