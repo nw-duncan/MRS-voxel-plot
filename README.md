@@ -1,6 +1,6 @@
 # MRS-voxel-plot
 Example code to create informative MRS voxel and spectra figures for publication.  
-### Figure type 1 - MRS voxel overlaps  
+#### Figure type 1 - MRS voxel overlaps  
 
 
 # Dependencies
