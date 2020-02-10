@@ -7,11 +7,15 @@ Participant IDs should be in a TSV file entitled participants.tsv located in the
 project directory.
 
 Created by NWD, 2020-01-31
+Modified by VHT, 2020-02-07
 
 """
 
+
 import os
 import numpy as np
+import pandas as pd
+import nibabel as ni
 import matplotlib.pyplot as plt
 from nilearn import plotting
 
@@ -28,11 +32,14 @@ if not os.path.isdir(fig_dir):
 # Mask filename
 mask_file = 'mask_mni.nii.gz'
 
+# Naming of the headers of the participants.tsv file
+ID_header='Participant_ID'
+
 # Colour to make the centroid markers - should be in a format compatible with matplotlib
 node_colour = 'red'
 
 # Load in the participant IDs
-subjects = np.loadtxt(data_dir+'participants.tsv', delimiter='\t', dtype='str')
+subjects = pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[ID_header]
 n_subs = len(subjects)
 
 # Load all masks into a list
@@ -51,10 +58,10 @@ adjacency_matrix = np.zeros((n_subs,n_subs))
 # Plot the figure
 fig = plt.figure()
 fig.set_size_inches(5,3)
-ax1 = plt.subplot(111)
-plotting.plot_connectome(adjacency_matrix=adjacency_matrix, node_coords=center_all,
+axes1 = plt.subplot(111)
+plotting.plot_connectome(adjacency_matrix=adjacency_matrix, node_coords=all_centres,
   node_size=50, node_color=node_colour, display_mode='xz', node_kwargs={'alpha':0.3},
   axes=axes1)
 
 # Save the figure
-fig.savefig(fig_dir+'mask_centroids.png',bbox_inches='tight',dpi=300)
+fig.savefig(fig_dir+'mask_centroids_single-group.png',bbox_inches='tight',dpi=300)

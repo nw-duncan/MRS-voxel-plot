@@ -7,10 +7,14 @@ Participant IDs should be in a TSV file entitled participants.tsv located in the
 project directory.
 
 Created by NWD, 2020-01-31
+Modified by VHT, 2020-02-07
+
 """
 
 import os
 import numpy as np
+import pandas as pd
+import nibabel as ni
 import matplotlib.pyplot as plt
 from nilearn import plotting
 
@@ -27,8 +31,12 @@ if not os.path.isdir(fig_dir):
 # Mask filename
 mask_file = 'mask_mni.nii.gz'
 
+# Naming of the headers of the participants.tsv file
+ID_header='Participant_ID'
+
 # Load in the participant IDs
-subjects = np.loadtxt(data_dir+'participants.tsv', delimiter='\t', dtype='str')
+subjects = pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[ID_header]
+
 n_subs = len(subjects)
 
 # Load the MRS mask affine matrix and dimensions
@@ -38,7 +46,7 @@ def get_mask_info(fpath):
   dims = tmp.shape
   return(aff,dims)
 
-mask_aff, mask_dims = get_mask_info(os.path.join(data_dir,subjects[0],'mrs'))
+mask_aff, mask_dims = get_mask_info(os.path.join(data_dir,subjects[0],'mrs',mask_file))
 
 # Load mask data for all participants
 all_mask_data = np.zeros(np.hstack((n_subs,mask_dims)))
@@ -59,7 +67,7 @@ ax1 = plt.subplot(111)
 plotting.plot_glass_brain(density_map, threshold=0, colorbar=True, axes=ax1, cmap='autumn', display_mode='xz')
 
 # Save the figure
-fig.savefig(fig_dir+'figure_voxel_density_map.png',bbox_inches='tight',dpi=300)
+fig.savefig(fig_dir+'figure_voxel_density_map_single-group.png',bbox_inches='tight',dpi=300)
 
 # Save density map NIFTI file
-density_map.to_filename(fig_dir+'voxel_density_map.nii.gz')
+density_map.to_filename(fig_dir+'voxel_density_map_single-group.nii.gz')

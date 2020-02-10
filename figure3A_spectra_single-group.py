@@ -5,6 +5,7 @@ Participant IDs should be in a TSV file entitled participants.tsv located in the
 project directory.
 
 Created by NWD, 2020-01-31
+Modified by VHT, 2020-02-07
 
 """
 
@@ -23,8 +24,12 @@ fig_dir = os.path.join(data_dir,'figures')
 if not os.path.isdir(fig_dir):
   os.mkdir(fig_dir)
 
+# Naming of the headers of the participants.tsv file
+ID_header='Participant_ID'
+
 # Load in the participant IDs
-subjects = np.loadtxt(data_dir+'participants.tsv', delimiter='\t', dtype='str')
+subjects = pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[ID_header]
+
 n_subs = len(subjects)
 
 # Spectra filename
@@ -47,7 +52,7 @@ freq_len = freq.shape[-1]
 # Load in spectra
 all_spec = np.zeros((n_subs,freq_len))
 for i,sub in enumerate(subjects):
-    all_spec[i,:] = np.loadtxt(os.path.join(data_dir,subjects[0],'mrs',spec_file)
+    all_spec[i,:] = np.loadtxt(os.path.join(data_dir,subjects[i],'mrs',spec_file))
 
 # Calculate group mean
 mean_spec = np.mean(all_spec, axis=0)
@@ -70,9 +75,9 @@ for i in range(n_subs): # Plot individual spectra
       linewidth=0.4, alpha=0.3, color=spec_colour)
 ax1.plot(freq[disp_range[0]:disp_range[1]], mean_spec[disp_range[0]:disp_range[1]],
   linewidth=1, alpha=0.9, color=spec_colour)
-ax.set_xlabel('ppm',fontsize=8) # Label for x-axix - assumed to be in ppm here
-ax.tick_params(axis='x',labelsize=8)
-ax.set_yticklabels(('')) # Remove the tick labels from the y-axis
+ax1.set_xlabel('ppm',fontsize=8) # Label for x-axix - assumed to be in ppm here
+ax1.tick_params(axis='x',labelsize=8)
+ax1.set_yticklabels(('')) # Remove the tick labels from the y-axis
 
 # Save the figure
 fig.savefig(fig_dir+'mrs_spectra.png',bbox_inches='tight',dpi=300)
