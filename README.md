@@ -2,7 +2,13 @@
 Example code to create informative MRS voxel and spectra figures for publication.  
 #### Figure type 1 - MRS voxel overlaps 
 ![MRS voxel overlap](example-figures/voxel-density-map_single-group.png)  
-Present the overlap in MRS voxels for all participants in a single or multiple groups.
+Present the overlap in MRS voxels for all participants in a single or multiple groups.  
+#### Figure type 2 - MRS voxel centroids
+![MRS voxel centroids](example-figures/mask-centroids_two-groups.png)  
+Calculate and show MRS voxel centroids for all participants in single or multiple groups.  
+#### Figure type 3 - MRS spectra  
+![MRS spectra](example-figures/mrs-spectra_single-group.png)  
+Present individual and group average MRS spectra. 
 
 
 # Dependencies
