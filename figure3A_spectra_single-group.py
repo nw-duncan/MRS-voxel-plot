@@ -4,6 +4,8 @@ Create a figure showing the MRS spectra for a set of participants.
 Participant IDs should be in a TSV file entitled participants.tsv located in the
 project directory.
 
+This example uses MEGA-PRESS difference spectra created with Gannet v3.
+
 Created by NWD, 2020-01-31
 Modified by VHT, 2020-02-07
 
@@ -24,8 +26,8 @@ fig_dir = os.path.join(data_dir,'figures')
 if not os.path.isdir(fig_dir):
   os.mkdir(fig_dir)
 
-# Naming of the headers of the participants.tsv file
-ID_header='Participant_ID'
+# Name of the participant ID column in the participants.tsv file
+ID_header='participant_id'
 
 # Load in the participant IDs
 subjects = pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[ID_header]
@@ -44,7 +46,7 @@ disp_range = [17500,23000]
 
 # Colour to make the individual spectra - should be in a format compatible with matplotlib
 spec_colour = 'black'
-spec_color_mean='red'
+spec_color_mean = 'red'
 
 # Load in the spectum frequencies
 freq = np.loadtxt(os.path.join(data_dir,subjects[0],'mrs',freq_file))
@@ -75,7 +77,7 @@ for i in range(n_subs): # Plot individual spectra
     ax1.plot(freq[disp_range[0]:disp_range[1]], all_spec[i,disp_range[0]:disp_range[1]],
       linewidth=0.3, alpha=0.3, color=spec_colour)
 ax1.plot(freq[disp_range[0]:disp_range[1]], mean_spec[disp_range[0]:disp_range[1]],
-  linewidth=1, alpha=0.9, color=spec_color_mean)
+  linewidth=0.8, alpha=0.9, color=spec_color_mean)
 ax1.set_xlabel('ppm',fontsize=8) # Label for x-axix - assumed to be in ppm here
 ax1.tick_params(axis='x',labelsize=8)
 ax1.set_yticklabels(('')) # Remove the tick labels from the y-axis
