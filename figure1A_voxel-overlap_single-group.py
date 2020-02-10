@@ -17,6 +17,7 @@ import pandas as pd
 import nibabel as ni
 import matplotlib.pyplot as plt
 from nilearn import plotting
+from matplotlib import ticker
 
 # Project directory
 data_dir = '/home/MRS_project/'
@@ -65,6 +66,10 @@ fig = plt.figure()
 fig.set_size_inches(6,3)
 ax1 = plt.subplot(111)
 plotting.plot_glass_brain(density_map, threshold=0, colorbar=True, axes=ax1, cmap='autumn', display_mode='xz')
+
+# Adjust the scientific notion in the colorbar
+for ax in plt.gcf().axes:
+    ax.yaxis.set_major_formatter(ticker.PercentFormatter(1))
 
 # Save the figure
 fig.savefig(fig_dir+'figure_voxel_density_map_single-group.png',bbox_inches='tight',dpi=300)

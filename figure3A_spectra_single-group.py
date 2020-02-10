@@ -43,7 +43,8 @@ freq_file = 'spectrum_frequencies.txt'
 disp_range = [17500,23000]
 
 # Colour to make the individual spectra - should be in a format compatible with matplotlib
-spec_colour = 'red'
+spec_colour = 'black'
+spec_color_mean='red'
 
 # Load in the spectum frequencies
 freq = np.loadtxt(os.path.join(data_dir,subjects[0],'mrs',freq_file))
@@ -72,9 +73,9 @@ ax1.grid(axis='y', color="0.9", linestyle='-', linewidth=1)
 ax1.set_axisbelow(True)
 for i in range(n_subs): # Plot individual spectra
     ax1.plot(freq[disp_range[0]:disp_range[1]], all_spec[i,disp_range[0]:disp_range[1]],
-      linewidth=0.4, alpha=0.3, color=spec_colour)
+      linewidth=0.3, alpha=0.3, color=spec_colour)
 ax1.plot(freq[disp_range[0]:disp_range[1]], mean_spec[disp_range[0]:disp_range[1]],
-  linewidth=1, alpha=0.9, color=spec_colour)
+  linewidth=1, alpha=0.9, color=spec_color_mean)
 ax1.set_xlabel('ppm',fontsize=8) # Label for x-axix - assumed to be in ppm here
 ax1.tick_params(axis='x',labelsize=8)
 ax1.set_yticklabels(('')) # Remove the tick labels from the y-axis
