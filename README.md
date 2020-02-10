@@ -1,5 +1,7 @@
 # MRS-voxel-plot
-This code can be used to create MRS voxel and spectra figures in the manner suggested in Truong & Duncan (2020).
+Example code to create informative MRS voxel and spectra figures for publication.  
+### Figure type 1 - MRS voxel overlaps  
+
 
 # Dependencies
 - Numpy (https://numpy.org)
