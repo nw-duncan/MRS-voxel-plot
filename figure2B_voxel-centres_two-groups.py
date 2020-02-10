@@ -32,13 +32,13 @@ if not os.path.isdir(fig_dir):
 # Mask filename
 mask_file = 'mask_mni.nii.gz'
 
-# Naming of the headers of the participants.tsv file
-ID_header='Participant_ID'
-group_header='Group'
+# Name of the participant ID and group membership columns in the participants.tsv file
+ID_header = 'participant_id'
+group_header = 'group'
 
 # Naming of the group categories:
-group_name_1='Group1'
-group_name_2='Group2'
+group_name_1 = 'Group1'
+group_name_2 = 'Group2'
 
 # Colour to make the centroid markers - should be in a format compatible with matplotlib
 node_colour_1 = 'red'
