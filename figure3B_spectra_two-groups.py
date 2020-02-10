@@ -4,6 +4,8 @@ Create a figure showing the MRS spectra for a set of participants.
 Participant IDs and group category should be in a TSV file entitled participants.tsv located in the
 project directory.
 
+This example uses MEGA-PRESS difference spectra created with Gannet v3.
+
 Created by NWD, 2020-01-31
 Modified by VHT, 2020-02-07
 
@@ -24,13 +26,13 @@ fig_dir = os.path.join(data_dir,'figures')
 if not os.path.isdir(fig_dir):
   os.mkdir(fig_dir)
 
-# Naming of the headers of the participants.tsv file
-ID_header='Participant_ID'
-group_header='Group'
+# Column names in the participants.tsv file for participant IDs and group membership
+ID_header = 'participant_id'
+group_header = 'group'
 
 # Naming of the group categories:
-group_name_1='Group1'
-group_name_2='Group2'
+group_name_1 = 'Group1'
+group_name_2 = 'Group2'
 
 # Colour to make the centroid markers - should be in a format compatible with matplotlib
 spec_colour_1 = 'red'
@@ -55,6 +57,7 @@ disp_range = [17500,23000]
 # Colour to make the individual spectra - should be in a format compatible with matplotlib
 spec_colour_1 = 'red'
 spec_colour_2 = 'blue'
+
 # Load in the spectum frequencies
 freq = np.loadtxt(os.path.join(data_dir,subjects[0],'mrs',freq_file))
 freq_len = freq.shape[-1]
@@ -63,15 +66,15 @@ freq_len = freq.shape[-1]
 spec_1 = np.zeros((n_subs_1,freq_len))
 spec_2 = np.zeros((n_subs_2,freq_len))
 
-idx1=0
-idx2=0
+idx1 = 0
+idx2 = 0
 for i,sub in enumerate(subjects):
   if groups[i]==group_name_1:
     spec_1[idx1,:] = np.loadtxt(os.path.join(data_dir,subjects[i],'mrs',spec_file))
-    idx1=idx1+1
+    idx1 = idx1+1
   if groups[i]==group_name_2:
     spec_2[idx2,:] = np.loadtxt(os.path.join(data_dir,subjects[i],'mrs',spec_file))
-    idx2=idx2+1
+    idx2 = idx2+1
 
 # Calculate group mean
 mean_spec_1 = np.mean(spec_1, axis=0)
