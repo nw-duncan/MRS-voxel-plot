@@ -20,7 +20,8 @@ Present individual and group average MRS spectra.
 # Data organisation
 The scripts assume that your data are in folders organised in a manner similar to the BIDS standard (https://bids.neuroimaging.io/).  
 
-Participant IDs and group labels (where relevant) should be in a TSV file that conforms to this standard.
+Participant IDs and group labels (where relevant) should be in a TSV file that conforms to this standard.  
+Voxel mask files should be in NIFTI format and already aligned to MNI152 standard space.
 
 # Acknowledgement
 
