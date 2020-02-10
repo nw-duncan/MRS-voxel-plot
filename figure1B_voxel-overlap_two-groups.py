@@ -17,6 +17,8 @@ import pandas as pd
 import nibabel as ni
 import matplotlib.pyplot as plt
 from nilearn import plotting
+from matplotlib import ticker
+import matplotlib.gridspec as gridspec
 
 # Project directory
 data_dir = '/home/MRS_project/'
@@ -83,10 +85,29 @@ density_map_2 = ni.Nifti1Image(density_2,mask_aff)
 # Plot the figure
 fig = plt.figure()
 fig.set_size_inches(6,3)
-ax1 = plt.subplot(111)
-display=plotting.plot_glass_brain(None, threshold=0, colorbar=True, axes=ax1, display_mode='xz',alpha=0.5)
-display.add_contours(density_map_1, cmap='Reds',filled=False,alpha=0.8, colorbar=True)
-display.add_contours(density_map_2, cmap='Blues',filled=False,alpha=0.8, colorbar=True)
+
+gs = gridspec.GridSpec(1, 3,width_ratios=[9,1,1])
+ax1 = plt.subplot(gs[0])
+
+display=plotting.plot_glass_brain(None, threshold=0, colorbar=False, axes=ax1, display_mode='xz',alpha=0.5)
+display.add_contours(density_map_1, cmap='Reds',alpha=0.7)
+display.add_contours(density_map_2, cmap='Blues',alpha=0.7)
+
+ax2 = plt.subplot(gs[1])
+a = np.array([[0,1]])
+img = plt.imshow(a, cmap="Reds",axes=ax2)
+ax2.set_visible(False)
+plt.colorbar(ax=ax2)
+
+ax3 = plt.subplot(gs[2])
+a = np.array([[0,1]])
+img = plt.imshow(a, cmap="Blues",axes=ax3)
+ax3.set_visible(False)
+plt.colorbar(ax=ax3)
+
+# Adjust the scientific notation in the colorbars
+for ax in plt.gcf().axes:
+    ax.yaxis.set_major_formatter(ticker.PercentFormatter(1))
 
 # Save the figure
 fig.savefig(fig_dir+'figure_voxel_density_map_two-groups.png',bbox_inches='tight',dpi=300)
