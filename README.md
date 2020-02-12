@@ -27,5 +27,7 @@ Voxel mask files should be in NIFTI format and already aligned to MNI152 standar
 Separate MRS spectra text files for each participant are required, along with a text file containing the corresponding spectral frequency at each point.
 
 # Acknowledgement
+When using this code please cite:  
+Truong, V., Duncan, N.W., 2020. Suggestions for improving the reporting of magnetic resonance spectroscopy voxels and spectra (preprint). Open Science Framework. https://doi.org/10.31219/osf.io/rua9f
 
 Please also cite https://www.frontiersin.org/articles/10.3389/fninf.2014.00014/full when using nilearn. 
