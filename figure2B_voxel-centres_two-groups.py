@@ -54,9 +54,9 @@ n_subs_2 = sum(isinstance(name, str) for name in groups if name==group_name_2)
 masks_1 = []
 masks_2 = []
 for i, sub in enumerate(subjects):
-  if group[i]==group_name_1:
+  if groups[i]==group_name_1:
     masks_1.append(ni.load(os.path.join(data_dir,sub,'mrs',mask_file)))
-  if group[i]==group_name_2:
+  if groups[i]==group_name_2:
     masks_2.append(ni.load(os.path.join(data_dir,sub,'mrs',mask_file)))
 
 # Calculate the coordinates of the centroids
