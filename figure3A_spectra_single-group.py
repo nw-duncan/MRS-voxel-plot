@@ -85,4 +85,4 @@ ax1.set_yticklabels(('')) # Remove the tick labels from the y-axis
 plt.gca().invert_xaxis() # Invert the ppm axis (for convention)
 
 # Save the figure
-fig.savefig(fig_dir+'mrs_spectra.png',bbox_inches='tight',dpi=300)
+fig.savefig(fig_dir+'mrs_spectra_single-group.png',bbox_inches='tight',dpi=300)
