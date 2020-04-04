@@ -82,5 +82,7 @@ ax1.set_xlabel('ppm',fontsize=8) # Label for x-axix - assumed to be in ppm here
 ax1.tick_params(axis='x',labelsize=8)
 ax1.set_yticklabels(('')) # Remove the tick labels from the y-axis
 
+plt.gca().invert_xaxis() # Invert the ppm axis (for convention)
+
 # Save the figure
 fig.savefig(fig_dir+'mrs_spectra.png',bbox_inches='tight',dpi=300)
