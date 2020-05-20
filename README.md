@@ -7,7 +7,7 @@ Present the overlap in MRS voxels for all participants in a single or multiple g
 ![MRS voxel centroids](example-figures/mask-centroids_two-groups.png)  
 Calculate and show MRS voxel centroids for all participants in single or multiple groups.  
 #### Figure type 3 - MRS spectra  
-![MRS spectra](example-figures/mrs-spectra_single-group.png)  
+![MRS spectra](example-figures/mrs_spectra_single-group.png)  
 Present individual and group average MRS spectra. 
 
 
