@@ -34,10 +34,6 @@ group_header = 'group'
 group_name_1 = 'Group1'
 group_name_2 = 'Group2'
 
-# Colour to make the centroid markers - should be in a format compatible with matplotlib
-spec_colour_1 = 'red'
-spec_colour_2 = 'blue'
-
 # Load in the participant IDs and group information
 subjects = pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[ID_header]
 groups =  pd.read_csv(data_dir+'participants.tsv', delimiter='\t')[group_header]
