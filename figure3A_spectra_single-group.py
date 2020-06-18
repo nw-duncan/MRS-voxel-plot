@@ -42,7 +42,11 @@ freq_file = 'spectrum_frequencies.txt'
 
 # Display range - indices to show only the desired region of the spectra
 # This will vary between data types and analysis software
-disp_range = [17500,23000]
+def find_nearest(x,value):
+    idx = (abs(x-value)).argmin()
+    return idx
+
+disp_range = [find_nearest(freq,4.2),find_nearest(freq,1.5)]
 
 # Colour to make the individual spectra - should be in a format compatible with matplotlib
 spec_colour = 'black'
