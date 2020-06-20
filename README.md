@@ -1,14 +1,15 @@
 # MRS-voxel-plot
 Example code to create informative MRS voxel and spectra figures for publication.  
-#### Figure type 1 - MRS voxel overlaps 
+#### Figure type 1 - MRS voxel overlaps
 ![MRS voxel overlap](example-figures/voxel-density-map_single-group.png)  
 Present the overlap in MRS voxels for all participants in a single or multiple groups.  
 #### Figure type 2 - MRS voxel centroids
-![MRS voxel centroids](example-figures/mask-centroids_two-groups.png)  
+#![MRS voxel centroids](example-figures/mask-centroids_two-groups.png) 
+<img src="example-figures/mask-centroids_two-groups.png" width=200>
 Calculate and show MRS voxel centroids for all participants in single or multiple groups.  
 #### Figure type 3 - MRS spectra  
 ![MRS spectra](example-figures/mrs_spectra_single-group.png)  
-Present individual and group average MRS spectra. 
+Present individual and group average MRS spectra.
 
 
 # Dependencies
@@ -30,4 +31,4 @@ Separate MRS spectra text files for each participant are required, along with a 
 When using this code please cite:  
 Truong, V., Duncan, N.W., 2020. Suggestions for improving the reporting of magnetic resonance spectroscopy voxels and spectra (preprint). Open Science Framework. https://doi.org/10.31219/osf.io/rua9f
 
-Please also cite https://www.frontiersin.org/articles/10.3389/fninf.2014.00014/full when using nilearn. 
+Please also cite https://www.frontiersin.org/articles/10.3389/fninf.2014.00014/full when using nilearn.
