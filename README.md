@@ -1,12 +1,10 @@
 # MRS-voxel-plot
 Example code to create informative MRS voxel and spectra figures for publication.  
 #### Figure type 1 - MRS voxel overlaps
-
 <img src="example-figures/voxel-density-map_single-group.png" width=400>
 
 Present the overlap in MRS voxels for all participants in a single or multiple groups.  
 #### Figure type 2 - MRS voxel centroids
-
 <img src="example-figures/mask-centroids_two-groups.png" width=400>
 
 Calculate and show MRS voxel centroids for all participants in single or multiple groups.  
@@ -16,6 +14,8 @@ Calculate and show MRS voxel centroids for all participants in single or multipl
 
 Present individual and group average MRS spectra.
 
+#### Usage
+Full walk-thoughs of the code are available in the "how-to" folder. 
 
 # Dependencies
 - Numpy (https://numpy.org)
