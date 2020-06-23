@@ -37,3 +37,9 @@ When using this code please cite:
 Truong, V., Duncan, N.W., 2020. Suggestions for improving the reporting of magnetic resonance spectroscopy voxels and spectra (preprint). Open Science Framework. https://doi.org/10.31219/osf.io/rua9f
 
 Please also cite https://www.frontiersin.org/articles/10.3389/fninf.2014.00014/full when using nilearn.
+
+
+
+[![DOI](https://zenodo.org/badge/237411381.svg)](https://zenodo.org/badge/latestdoi/237411381)
+
+
