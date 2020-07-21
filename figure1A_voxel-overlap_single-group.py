@@ -72,7 +72,7 @@ for ax in plt.gcf().axes:
     ax.yaxis.set_major_formatter(ticker.PercentFormatter(1))
 
 # Save the figure
-fig.savefig(fig_dir+'figure_voxel_density_map_single-group.png',bbox_inches='tight',dpi=300)
+fig.savefig(fig_dir+'/figure_voxel_density_map_single-group.png',bbox_inches='tight',dpi=300)
 
 # Save density map NIFTI file
-density_map.to_filename(fig_dir+'voxel_density_map_single-group.nii.gz')
+density_map.to_filename(fig_dir+'/voxel_density_map_single-group.nii.gz')
